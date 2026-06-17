@@ -98,3 +98,13 @@ npm run generate:dotted-map
 ## Public Repo And Site Import ZIP
 
 `sample/` contains sample widgets provided by Namo Site. It is included in the public repo for reference. It is not included in the Namo admin import ZIP created with `SITE=<site> npm run pack` for a specific site. README files and development scripts are also excluded from that admin ZIP. Site-specific one-off tools and real migration outputs are not tracked in the public repo.
+
+## Release
+
+The npm package is published from GitHub Actions through npm Trusted Publishing (OIDC), not from local `npm publish`.
+
+- GitHub repository: `hgwk/nsmk`
+- npm package: `@hgwk/nsmk`
+- Workflow: `.github/workflows/release.yml`
+- Release tags must match the version in `package.json`. Example: `v0.1.0`
+- npm Trusted Publisher configuration: GitHub Actions / `hgwk` / `nsmk` / `release.yml` / no environment

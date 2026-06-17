@@ -98,3 +98,13 @@ npm run generate:dotted-map
 ## 공개 repo와 사이트 import ZIP
 
 `sample/`은 Namo 사이트에서 제공한 샘플 위젯 모음입니다. 공개 repo에는 참고용으로 포함합니다. 단, 특정 사이트를 Namo에 import하기 위해 `SITE=<site> npm run pack`으로 만드는 admin ZIP에는 `sample/`, README, 개발 스크립트가 들어가지 않습니다. 특정 사이트 이식 과정에서 사용한 과거/일회성 도구와 실제 사이트 산출물도 공개 repo에서 추적하지 않습니다.
+
+## 릴리즈
+
+npm 패키지는 로컬 `npm publish`가 아니라 GitHub Actions의 npm Trusted Publishing(OIDC)으로 배포합니다.
+
+- GitHub repository: `hgwk/nsmk`
+- npm package: `@hgwk/nsmk`
+- workflow: `.github/workflows/release.yml`
+- release tag는 `package.json`의 `version`과 같아야 합니다. 예: `v0.1.0`
+- npm Trusted Publisher 설정: GitHub Actions / `hgwk` / `nsmk` / `release.yml` / environment 없음

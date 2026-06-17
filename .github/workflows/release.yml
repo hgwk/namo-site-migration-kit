@@ -1,0 +1,59 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+      - name: release version guard
+        run: |
+          set -euo pipefail
+          npm_version=$(node -p "require('./package.json').version")
+          tag_version="${GITHUB_REF_NAME#v}"
+          if [ "$tag_version" != "$npm_version" ]; then
+            echo "::error::tag $GITHUB_REF_NAME does not match package version $npm_version"
+            exit 1
+          fi
+      - name: smoke
+        run: |
+          node --check bin/nsmk.mjs
+          node --check scripts/init-site.mjs
+          node --check scripts/build-token-admin-zip.mjs
+          SITE=_template node scripts/build-token-admin-zip.mjs
+          rm -rf /tmp/nsmk-release-smoke
+          node bin/nsmk.mjs create /tmp/nsmk-release-smoke --site smoke-site --name "Smoke Site"
+          test -L /tmp/nsmk-release-smoke/CLAUDE.md
+          test "$(readlink /tmp/nsmk-release-smoke/CLAUDE.md)" = "AGENTS.md"
+          test -d /tmp/nsmk-release-smoke/sites/smoke-site/_source
+          test -d /tmp/nsmk-release-smoke/sites/smoke-site/_reports
+          test -d /tmp/nsmk-release-smoke/sites/smoke-site/_qa
+          unzip -l dist/_template/replace-with-namo-site-id/_template-replace-with-namo-site-id-token-admin-import.zip | tee /tmp/nsmk-zip-list.txt
+          ! grep -E 'sample|README|scripts/init-site|package.json' /tmp/nsmk-zip-list.txt
+      - run: npm pack --dry-run
+
+  publish-npm:
+    needs: quality
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - run: npm publish --access public
