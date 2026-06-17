@@ -86,12 +86,6 @@ npm run generate:dotted-map
 - `analyze:sitebuilder`: Sitebuilder export 構造を分析します。
 - `generate:dotted-map`: 共有の dotted world map widget data を再生成します。
 
-## 公開 repo と kit package
+## 公開 repo とサイト import ZIP
 
-`sample/` は Namo Site が提供したサンプル widget 集です。公開 repo と `pack:kit` で作る kit 配布用 tarball の両方に含めます。ただし、特定サイトを Namo に import するために `SITE=<site> npm run pack` で作る admin ZIP には `sample/` は入りません。サイト固有の一回限りの tool や実際の移行成果物は、公開 repo と kit 配布用 tarball では追跡しません。
-
-```bash
-npm run pack:kit
-```
-
-出力は `dist/namo-migration-kit.tar.gz` です。これは新しい作業者に渡す kit bundle であり、Namo admin import ZIP ではありません。この tarball には `sites/_template`, `sample`, local preview runtime, shared widgets, common migration helpers, build/verify scripts が含まれます。
+`sample/` は Namo Site が提供したサンプル widget 集です。参考用として公開 repo に含めます。ただし、特定サイトを Namo に import するために `SITE=<site> npm run pack` で作る admin ZIP には `sample/` は入りません。README や開発 scripts も admin ZIP には入りません。サイト固有の一回限りの tool や実際の移行成果物も公開 repo では追跡しません。

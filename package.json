@@ -1,5 +1,5 @@
 {
-  "name": "namo-site-migration-kit",
+  "name": "nsmk",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,7 +13,6 @@
     "generate:dotted-map": "node scripts/gen-dotted-map.mjs",
     "pack": "node scripts/build-token-admin-zip.mjs",
     "pack:template": "SITE=_template node scripts/build-token-admin-zip.mjs",
-    "pack:kit": "node scripts/package-migration-kit.mjs",
     "verify:package": "node scripts/verify-site-package.mjs",
     "verify:preview": "node scripts/verify-site-preview.mjs"
   },

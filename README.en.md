@@ -86,12 +86,6 @@ npm run generate:dotted-map
 - `analyze:sitebuilder`: Analyzes a Sitebuilder export structure.
 - `generate:dotted-map`: Regenerates the shared dotted world map widget data.
 
-## Public Repo And Kit Package
+## Public Repo And Site Import ZIP
 
-`sample/` contains sample widgets provided by Namo Site. It is included in both the public repo and the kit distribution tarball created by `pack:kit`. It is not included in the Namo admin import ZIP created with `SITE=<site> npm run pack` for a specific site. Site-specific one-off tools and real migration outputs are not tracked in the public repo or the kit distribution tarball.
-
-```bash
-npm run pack:kit
-```
-
-The output is `dist/namo-migration-kit.tar.gz`. This tarball is a kit bundle for new workers, not a Namo admin import ZIP. It contains `sites/_template`, `sample`, the local preview runtime, shared widgets, common migration helpers, and build/verify scripts.
+`sample/` contains sample widgets provided by Namo Site. It is included in the public repo for reference. It is not included in the Namo admin import ZIP created with `SITE=<site> npm run pack` for a specific site. README files and development scripts are also excluded from that admin ZIP. Site-specific one-off tools and real migration outputs are not tracked in the public repo.
