@@ -1,7 +1,45 @@
 {
-  "name": "nsmk",
-  "private": true,
+  "name": "@hgwk/nsmk",
+  "version": "0.1.0",
+  "description": "Namo Sitebuilder migration kit",
+  "license": "MIT",
+  "author": "hgwk",
   "type": "module",
+  "bin": {
+    "nsmk": "bin/nsmk.mjs"
+  },
+  "files": [
+    "bin",
+    "scripts/analyze-sitebuilder-export.mjs",
+    "scripts/build-token-admin-zip.mjs",
+    "scripts/extract-wordpress-documents.mjs",
+    "scripts/gen-dotted-map.mjs",
+    "scripts/init-site.mjs",
+    "scripts/mirror-document-images.mjs",
+    "scripts/optimize-assets-fast.mjs",
+    "scripts/verify-site-package.mjs",
+    "scripts/verify-site-preview.mjs",
+    "shared",
+    "sites/_template",
+    "sample",
+    "src",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "LOCAL_PREVIEW.md",
+    "LICENSE",
+    "README.md",
+    "README.en.md",
+    "README.ja.md",
+    "index.html",
+    "vite.config.mjs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hgwk/nsmk.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "init:site": "node scripts/init-site.mjs",
     "dev": "vite --host 127.0.0.1",

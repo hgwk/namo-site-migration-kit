@@ -4,6 +4,15 @@
 
 이 레포는 기존 웹사이트를 Namo/Sitebuilder import ZIP으로 재구성하기 위한 로컬 마이그레이션 키트입니다. 새 이식 작업은 `sites/_template`를 복사해서 시작합니다.
 
+## npm으로 시작
+
+```bash
+npx @hgwk/nsmk create migration-work --site my-site --name "My Site"
+cd migration-work
+npm install
+SITE=my-site npm run dev
+```
+
 ## 빠른 시작
 
 ```bash

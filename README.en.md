@@ -4,6 +4,15 @@
 
 This repository is a local migration kit for rebuilding existing websites as Namo/Sitebuilder import ZIP packages. Start a new migration by copying `sites/_template`.
 
+## Start From npm
+
+```bash
+npx @hgwk/nsmk create migration-work --site my-site --name "My Site"
+cd migration-work
+npm install
+SITE=my-site npm run dev
+```
+
 ## Quick Start
 
 ```bash

@@ -4,6 +4,15 @@
 
 このリポジトリは、既存サイトを Namo/Sitebuilder import ZIP として再構成するためのローカル移行キットです。新しい移行作業は `sites/_template` をコピーして始めます。
 
+## npm から始める
+
+```bash
+npx @hgwk/nsmk create migration-work --site my-site --name "My Site"
+cd migration-work
+npm install
+SITE=my-site npm run dev
+```
+
 ## クイックスタート
 
 ```bash
