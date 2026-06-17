@@ -88,10 +88,10 @@ npm run generate:dotted-map
 
 ## 公開 repo と kit package
 
-`sample/` は widget/API の例として公開 repo に残しますが、shareable kit tarball には含めません。サイト固有の一回限りの tool や実際の移行成果物は公開 repo では追跡しません。
+`sample/` は Namo Site が提供したサンプル widget 集です。公開 repo と `pack:kit` で作る kit 配布用 tarball の両方に含めます。ただし、特定サイトを Namo に import するために `SITE=<site> npm run pack` で作る admin ZIP には `sample/` は入りません。サイト固有の一回限りの tool や実際の移行成果物は、公開 repo と kit 配布用 tarball では追跡しません。
 
 ```bash
 npm run pack:kit
 ```
 
-出力は `dist/namo-migration-kit.tar.gz` です。この tarball には `sites/_template`, local preview runtime, shared widgets, common migration helpers, build/verify scripts だけが含まれます。
+出力は `dist/namo-migration-kit.tar.gz` です。これは新しい作業者に渡す kit bundle であり、Namo admin import ZIP ではありません。この tarball には `sites/_template`, `sample`, local preview runtime, shared widgets, common migration helpers, build/verify scripts が含まれます。

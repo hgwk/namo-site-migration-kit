@@ -88,10 +88,10 @@ npm run generate:dotted-map
 
 ## 공개 repo와 kit 패키지
 
-`sample/`은 위젯 API와 문서 API 사용 예시로 공개 repo에는 보관하지만 shareable kit tarball에는 포함하지 않습니다. 특정 사이트 이식 과정에서 사용한 과거/일회성 도구와 실제 사이트 산출물은 공개 repo에서 추적하지 않습니다.
+`sample/`은 Namo 사이트에서 제공한 샘플 위젯 모음입니다. 공개 repo와 `pack:kit`으로 만드는 키트 배포용 압축파일에는 포함합니다. 단, 특정 사이트를 Namo에 import하기 위해 `SITE=<site> npm run pack`으로 만드는 admin ZIP에는 `sample/`이 들어가지 않습니다. 특정 사이트 이식 과정에서 사용한 과거/일회성 도구와 실제 사이트 산출물은 공개 repo와 키트 배포용 압축파일에서 추적하지 않습니다.
 
 ```bash
 npm run pack:kit
 ```
 
-산출물은 `dist/namo-migration-kit.tar.gz`입니다. 이 tarball에는 `sites/_template`, 로컬 preview runtime, shared widgets, common migration helpers, build/verify scripts만 들어갑니다.
+산출물은 `dist/namo-migration-kit.tar.gz`입니다. 이 tarball은 새 작업자에게 전달하는 키트 묶음이며, Namo admin import ZIP이 아닙니다. 여기에는 `sites/_template`, `sample`, 로컬 preview runtime, shared widgets, common migration helpers, build/verify scripts가 들어갑니다.

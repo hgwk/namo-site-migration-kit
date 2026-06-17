@@ -19,6 +19,7 @@ const includes = [
   'package-lock.json',
   'vite.config.mjs',
   'index.html',
+  'sample',
   'src',
   'shared',
   'scripts/analyze-sitebuilder-export.mjs',
