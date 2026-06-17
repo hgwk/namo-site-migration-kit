@@ -8,10 +8,10 @@ This repository is a local migration kit for rebuilding existing websites as Nam
 
 ```bash
 npm install
-cp -R sites/_template sites/my-site
+npm run init:site -- my-site --name "My Site"
 ```
 
-Update the minimum values in `sites/my-site/site.config.json`.
+If needed, update the site ID and workspace ID in `sites/my-site/site.config.json`.
 
 ```json
 {
@@ -47,6 +47,9 @@ sites/<site>/
 │   └── site-footer.html
 ├── assets/
 │   └── ...
+├── _source/
+├── _reports/
+├── _qa/
 └── documents.extra.json
 ```
 
@@ -56,6 +59,9 @@ sites/<site>/
 - `widgets/*.html`: Static SSR widgets.
 - `widgets/*.jsx`: React widgets.
 - `assets/`: Source assets used by the build. Do not depend on files that exist only in `dist/` or `_source/`.
+- `_source/`: Local inbox for original exports, crawled HTML, WordPress XML, and existing site ZIPs. It is not committed to git.
+- `_reports/`: Local analysis and verification reports. It is not committed to git.
+- `_qa/`: Local screenshots and comparison results. It is not committed to git.
 - `documents.extra.json`: Managed content such as `ARTICLE`, `JSON`, `PLAN`, and `CUSTOMER`.
 
 ## Configuration Notes

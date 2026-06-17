@@ -8,10 +8,10 @@
 
 ```bash
 npm install
-cp -R sites/_template sites/my-site
+npm run init:site -- my-site --name "My Site"
 ```
 
-`sites/my-site/site.config.json`에서 최소값을 바꿉니다.
+필요하면 `sites/my-site/site.config.json`에서 site ID와 workspace ID를 바꿉니다.
 
 ```json
 {
@@ -47,6 +47,9 @@ sites/<site>/
 │   └── site-footer.html
 ├── assets/
 │   └── ...
+├── _source/
+├── _reports/
+├── _qa/
 └── documents.extra.json
 ```
 
@@ -56,6 +59,9 @@ sites/<site>/
 - `widgets/*.html`: 정적 SSR 위젯.
 - `widgets/*.jsx`: React 위젯.
 - `assets/`: 빌드 가능한 소스 자산. `dist/`나 `_source/`에만 있는 자산에 의존하지 않습니다.
+- `_source/`: 원본 export, 크롤 HTML, WordPress XML, 기존 사이트 ZIP 같은 로컬 원본 보관소. git에는 포함하지 않습니다.
+- `_reports/`: 분석/검증 리포트 보관소. git에는 포함하지 않습니다.
+- `_qa/`: 스크린샷, 비교 결과 같은 QA 산출물 보관소. git에는 포함하지 않습니다.
 - `documents.extra.json`: `ARTICLE`, `JSON`, `PLAN`, `CUSTOMER` 등 운영 콘텐츠.
 
 ## 설정 메모

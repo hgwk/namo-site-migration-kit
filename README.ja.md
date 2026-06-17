@@ -8,10 +8,10 @@
 
 ```bash
 npm install
-cp -R sites/_template sites/my-site
+npm run init:site -- my-site --name "My Site"
 ```
 
-`sites/my-site/site.config.json` の最小設定を変更します。
+必要に応じて `sites/my-site/site.config.json` の site ID と workspace ID を変更します。
 
 ```json
 {
@@ -47,6 +47,9 @@ sites/<site>/
 │   └── site-footer.html
 ├── assets/
 │   └── ...
+├── _source/
+├── _reports/
+├── _qa/
 └── documents.extra.json
 ```
 
@@ -56,6 +59,9 @@ sites/<site>/
 - `widgets/*.html`: 静的 SSR widget。
 - `widgets/*.jsx`: React widget。
 - `assets/`: build で使う source assets。`dist/` や `_source/` にしかない asset には依存しません。
+- `_source/`: original export、crawl HTML、WordPress XML、既存サイト ZIP などのローカル保管場所。git には含めません。
+- `_reports/`: analysis / verification report のローカル保管場所。git には含めません。
+- `_qa/`: screenshot や比較結果などの QA output のローカル保管場所。git には含めません。
 - `documents.extra.json`: `ARTICLE`, `JSON`, `PLAN`, `CUSTOMER` などの運用コンテンツ。
 
 ## 設定メモ

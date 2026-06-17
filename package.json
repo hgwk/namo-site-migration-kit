@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "init:site": "node scripts/init-site.mjs",
     "dev": "vite --host 127.0.0.1",
     "dev:template": "SITE=_template vite --host 127.0.0.1",
     "optimize:assets": "node scripts/optimize-assets-fast.mjs",
