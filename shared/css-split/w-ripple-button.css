@@ -1,0 +1,5 @@
+.sb-ripple-button{position:relative;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;border:2px solid currentColor;border-radius:10px;padding:9px 16px;background:transparent;color:inherit;cursor:pointer;text-decoration:none}
+.sb-ripple-button__label{position:relative;z-index:1}
+.sb-ripple-button__ripples{position:absolute;inset:0;pointer-events:none}
+.sb-ripple-button__ripples i{position:absolute;border-radius:999px;background:var(--sb-ripple-color,#fff);opacity:.3;transform:scale(0);animation:sbRippling var(--sb-ripple-duration,600ms) linear}
+@keyframes sbRippling{to{transform:scale(4);opacity:0}}

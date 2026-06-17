@@ -1,0 +1,18 @@
+.bg-pattern{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none;color:var(--bg-pattern-color);opacity:var(--bg-pattern-opacity);z-index:0}
+.bg-pattern__svg,.bg-pattern__canvas,.bg-pattern__canvas canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.bg-pattern__svg{color:var(--bg-pattern-color);fill:currentColor;stroke:currentColor}
+.bg-pattern--grid .bg-pattern__svg{fill:none;stroke-width:1}
+.bg-pattern--interactive-grid{pointer-events:auto}
+.bg-pattern--interactive-grid .bg-pattern__svg{pointer-events:auto;fill:transparent;stroke:currentColor;stroke-width:1}
+.bg-pattern--interactive-grid rect{transition:fill .12s ease,opacity .5s ease;fill:transparent;opacity:.65}
+.bg-pattern--interactive-grid rect.is-hot{fill:currentColor;opacity:.45}
+.bg-pattern--dots .bg-pattern__svg{fill:currentColor;stroke:none}
+.bg-pattern__dots--glow circle{animation:bgPatternPulse 3.6s ease-in-out infinite;transform-origin:center}
+.bg-pattern--noise .bg-pattern__svg{fill:currentColor;stroke:none;mix-blend-mode:soft-light}
+.bg-pattern--stripe .bg-pattern__svg,.bg-pattern--striped .bg-pattern__svg{fill:none;stroke:currentColor;stroke-width:.7}
+.bg-pattern--hexagon .bg-pattern__svg,.bg-pattern--hex .bg-pattern__svg{fill:none;stroke:currentColor;stroke-width:1}
+.bg-pattern--animated-grid .bg-pattern__svg{stroke:currentColor;stroke-width:1;fill:currentColor}
+.bg-pattern--animated-grid rect{opacity:.05;animation:bgPatternCell 4.2s ease-in-out infinite}
+.bg-pattern--flicker canvas{opacity:1}
+@keyframes bgPatternPulse{0%,100%{opacity:.25;transform:scale(1)}50%{opacity:1;transform:scale(1.8)}}
+@keyframes bgPatternCell{0%,100%{opacity:.04}45%{opacity:.28}60%{opacity:.1}}

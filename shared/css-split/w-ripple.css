@@ -1,0 +1,4 @@
+.sb-ripple{position:absolute;inset:0;pointer-events:none;overflow:hidden;user-select:none;-webkit-mask-image:linear-gradient(to bottom,#fff,transparent);mask-image:linear-gradient(to bottom,#fff,transparent)}
+.sb-ripple span{position:absolute;left:50%;top:50%;border:1px solid currentColor;border-radius:999px;background:currentColor;box-shadow:0 12px 32px rgba(0,0,0,.18);transform:translate(-50%,-50%) scale(1);animation:sbRipple 3s ease-out infinite}
+@keyframes sbRipple{0%{transform:translate(-50%,-50%) scale(.88);opacity:.2}60%{opacity:.08}100%{transform:translate(-50%,-50%) scale(1.18);opacity:0}}
+@media (prefers-reduced-motion:reduce){.sb-ripple span{animation:none}}

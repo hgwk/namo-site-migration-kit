@@ -1,0 +1,3 @@
+.sb-shine-border{position:absolute;inset:0;pointer-events:none;border-radius:inherit;padding:var(--sb-shine-width,1px);background-image:radial-gradient(transparent,transparent,var(--sb-shine-colors,#fff),transparent,transparent);background-size:300% 300%;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:sbShine var(--sb-shine-duration,14s) linear infinite;will-change:background-position;z-index:1}
+@keyframes sbShine{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@media (prefers-reduced-motion:reduce){.sb-shine-border{animation:none}}

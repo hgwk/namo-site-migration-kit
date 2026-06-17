@@ -1,0 +1,30 @@
+{
+  "name": "namo-site-migration-kit",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "dev:template": "SITE=_template vite --host 127.0.0.1",
+    "optimize:assets": "node scripts/optimize-assets-fast.mjs",
+    "extract:wordpress": "node scripts/extract-wordpress-documents.mjs",
+    "mirror:documents": "node scripts/mirror-document-images.mjs",
+    "analyze:sitebuilder": "node scripts/analyze-sitebuilder-export.mjs",
+    "generate:dotted-map": "node scripts/gen-dotted-map.mjs",
+    "pack": "node scripts/build-token-admin-zip.mjs",
+    "pack:template": "SITE=_template node scripts/build-token-admin-zip.mjs",
+    "pack:kit": "node scripts/package-migration-kit.mjs",
+    "verify:package": "node scripts/verify-site-package.mjs",
+    "verify:preview": "node scripts/verify-site-preview.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "vite": "^7.0.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.60.0",
+    "sharp": "^0.35.1",
+    "svg-dotted-map": "^2.0.1"
+  }
+}

@@ -1,0 +1,24 @@
+.site-wrap {
+  width: min(var(--site-wrap), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.site-section {
+  padding: 96px 0;
+}
+
+.site-eyebrow {
+  margin: 0 0 12px;
+  color: var(--site-accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.site-lead {
+  max-width: 680px;
+  color: var(--site-muted);
+  font-size: 18px;
+  line-height: 1.7;
+}

@@ -1,0 +1,6 @@
+.sb-border-beam{position:absolute;inset:0;pointer-events:none;border-radius:inherit;overflow:hidden;padding:var(--sb-border-beam-width,1px);z-index:1}
+.sb-border-beam::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:var(--sb-border-beam-width,1px);background:linear-gradient(90deg,var(--sb-border-beam-from),var(--sb-border-beam-to),transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.sb-border-beam span{position:absolute;width:var(--sb-border-beam-size,50px);height:calc(var(--sb-border-beam-size,50px) * var(--sb-border-beam-ratio,0.18));border-radius:999px;background:radial-gradient(ellipse at center,var(--sb-border-beam-core,#fff) 0%,var(--sb-border-beam-from,#fff) 32%,transparent 76%);filter:blur(var(--sb-border-beam-blur,2.5px));offset-path:inset(0 round var(--sb-border-beam-radius,999px));animation:sbBorderBeam var(--sb-border-beam-duration,6s) linear infinite;animation-delay:var(--sb-border-beam-delay,0s)}
+.sb-border-beam--reverse span{animation-direction:reverse}
+@keyframes sbBorderBeam{from{offset-distance:0%}to{offset-distance:100%}}
+@media (prefers-reduced-motion:reduce){.sb-border-beam span{animation:none}}

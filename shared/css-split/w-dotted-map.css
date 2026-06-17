@@ -1,0 +1,5 @@
+.sb-dotted-map{display:block;color:rgba(255,255,255,.38);overflow:visible}
+.sb-dotted-map__pulse{stroke-width:.35;opacity:1;animation:sbMapPulse 1.4s ease-out infinite;transform-origin:center}
+.sb-dotted-map__pulse--late{animation-delay:.7s}
+@keyframes sbMapPulse{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(2.8)}}
+@media (prefers-reduced-motion:reduce){.sb-dotted-map__pulse{animation:none;opacity:.35}}

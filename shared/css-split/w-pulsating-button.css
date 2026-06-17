@@ -1,0 +1,7 @@
+.sb-pulsating-button{position:relative;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;padding:9px 16px;background:currentColor;color:inherit;cursor:pointer;text-decoration:none;isolation:isolate}
+.sb-pulsating-button__label{position:relative;z-index:1;color:var(--sb-pulsating-label,#fff)}
+.sb-pulsating-button__pulse{position:absolute;inset:0;border-radius:inherit;background:var(--sb-pulse-color,currentColor);z-index:-1;animation:sbPulse var(--sb-pulse-duration,1.5s) ease-out infinite}
+.sb-pulsating-button--ripple .sb-pulsating-button__pulse{animation-name:sbPulseRipple}
+@keyframes sbPulse{0%{box-shadow:0 0 0 0 var(--sb-pulse-color,currentColor);opacity:.35}100%{box-shadow:0 0 0 var(--sb-pulse-distance,8px) transparent;opacity:0}}
+@keyframes sbPulseRipple{0%{transform:scale(1);opacity:.35}100%{transform:scale(1.25);opacity:0}}
+@media (prefers-reduced-motion:reduce){.sb-pulsating-button__pulse{animation:none;opacity:.2}}

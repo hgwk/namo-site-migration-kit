@@ -1,0 +1,10 @@
+.sb-shimmer-button{position:relative;z-index:0;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap;cursor:pointer;border:1px solid rgba(255,255,255,.1);border-radius:var(--sb-shimmer-radius,100px);padding:12px 24px;color:#fff;background:var(--sb-shimmer-bg,rgba(0,0,0,1));text-decoration:none;transition:transform .3s ease}
+.sb-shimmer-button:active{transform:translateY(1px)}
+.sb-shimmer-button__label{position:relative;z-index:2}
+.sb-shimmer-button__spark{position:absolute;inset:0;z-index:-3;overflow:visible;filter:blur(2px)}
+.sb-shimmer-button__spark::before{content:"";position:absolute;inset:-100%;background:conic-gradient(from 225deg,transparent 0,var(--sb-shimmer-color,#fff) 90deg,transparent 90deg);animation:sbShimmerSpin var(--sb-shimmer-speed,3s) linear infinite}
+.sb-shimmer-button__highlight{position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 -8px 10px rgba(255,255,255,.12);transition:box-shadow .3s ease}
+.sb-shimmer-button:hover .sb-shimmer-button__highlight{box-shadow:inset 0 -6px 10px rgba(255,255,255,.25)}
+.sb-shimmer-button__backdrop{position:absolute;inset:var(--sb-shimmer-cut,.05em);z-index:-2;border-radius:inherit;background:var(--sb-shimmer-bg,rgba(0,0,0,1))}
+@keyframes sbShimmerSpin{to{transform:rotate(1turn)}}
+@media (prefers-reduced-motion:reduce){.sb-shimmer-button__spark::before{animation:none}}

@@ -1,0 +1,14 @@
+.template-hero {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, #f7faff 0%, #ffffff 100%);
+}
+
+.template-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: 1;
+  letter-spacing: 0;
+}

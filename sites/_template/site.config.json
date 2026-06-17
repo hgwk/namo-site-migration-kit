@@ -1,0 +1,21 @@
+{
+  "builder": "generic",
+  "slug": "_template",
+  "name": "Namo Migration Template",
+  "siteIds": ["replace-with-namo-site-id"],
+  "primarySiteId": "replace-with-namo-site-id",
+  "wsId": "replace-with-workspace-id",
+  "sourceDir": "sites/_template",
+  "distDir": "dist",
+  "menuPaths": ["/"],
+  "siteMetaData": {
+    "title": "Namo Migration Template",
+    "description": "Starter site for Namo migration projects."
+  },
+  "staticPages": {
+    "home": "/"
+  },
+  "pageTitles": {
+    "home": "Home"
+  }
+}

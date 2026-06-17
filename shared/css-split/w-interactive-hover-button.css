@@ -1,0 +1,7 @@
+.sb-hover-button{position:relative;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid currentColor;border-radius:999px;padding:10px 24px;background:transparent;color:inherit;font-weight:800;text-decoration:none;cursor:pointer}
+.sb-hover-button__base,.sb-hover-button__hover{display:flex;align-items:center;justify-content:center;gap:8px;transition:transform .3s ease,opacity .3s ease}
+.sb-hover-button__base i{width:8px;height:8px;border-radius:999px;background:currentColor;transition:transform .3s ease}
+.sb-hover-button__hover{position:absolute;inset:0;z-index:1;transform:translateX(48px);opacity:0;color:var(--sb-hover-fg,#fff)}
+.sb-hover-button:hover .sb-hover-button__base i{transform:scale(100)}
+.sb-hover-button:hover .sb-hover-button__base span{transform:translateX(48px);opacity:0}
+.sb-hover-button:hover .sb-hover-button__hover{transform:translateX(0);opacity:1}

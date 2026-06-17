@@ -1,0 +1,9 @@
+.sb-rainbow-button{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;cursor:pointer;text-decoration:none;border:2px solid transparent;border-radius:8px;font-weight:800;isolation:isolate;transition:transform .2s ease,opacity .2s ease;background:linear-gradient(#121213,#121213) padding-box,linear-gradient(#121213 50%,rgba(18,18,19,.6) 80%,rgba(18,18,19,0)) border-box,linear-gradient(90deg,var(--sb-rainbow-1),var(--sb-rainbow-5),var(--sb-rainbow-3),var(--sb-rainbow-4),var(--sb-rainbow-2)) border-box;background-size:auto,auto,200% auto;color:#fff;animation:sbRainbow 4s linear infinite}
+.sb-rainbow-button::before{content:"";position:absolute;left:50%;bottom:-20%;z-index:-1;width:60%;height:20%;transform:translateX(-50%);filter:blur(12px);background:linear-gradient(90deg,var(--sb-rainbow-1),var(--sb-rainbow-5),var(--sb-rainbow-3),var(--sb-rainbow-4),var(--sb-rainbow-2));background-size:200% auto;animation:sbRainbow 4s linear infinite}
+.sb-rainbow-button:hover{transform:translateY(-1px)}
+.sb-rainbow-button--outline{background:linear-gradient(transparent,transparent) padding-box,linear-gradient(rgba(255,255,255,.2),rgba(255,255,255,.08)) border-box,linear-gradient(90deg,var(--sb-rainbow-1),var(--sb-rainbow-5),var(--sb-rainbow-3),var(--sb-rainbow-4),var(--sb-rainbow-2)) border-box}
+.sb-rainbow-button--default{min-height:36px;padding:8px 16px;font-size:14px}
+.sb-rainbow-button--sm{min-height:32px;padding:7px 12px;font-size:12px;border-radius:12px}
+.sb-rainbow-button--lg{min-height:44px;padding:10px 32px;font-size:15px;border-radius:12px}
+@keyframes sbRainbow{from{background-position:0 0,0 0,0 0}to{background-position:0 0,0 0,200% 0}}
+@media (prefers-reduced-motion:reduce){.sb-rainbow-button,.sb-rainbow-button::before{animation:none}}

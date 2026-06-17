@@ -1,0 +1,3 @@
+.sb-backlight{position:relative;display:inline-block;color:inherit}
+.sb-backlight::before{content:"";position:absolute;inset:-25%;z-index:-1;background:var(--sb-backlight-color,currentColor);filter:blur(var(--sb-backlight-blur,20px)) saturate(4);opacity:.5;border-radius:inherit}
+.sb-backlight span{position:relative;z-index:1}

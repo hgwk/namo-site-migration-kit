@@ -1,0 +1,19 @@
+:root {
+  --site-bg: #ffffff;
+  --site-text: #172033;
+  --site-muted: #607086;
+  --site-accent: #2563eb;
+  --site-border: #d9e2ef;
+  --site-wrap: 1120px;
+}
+
+body {
+  margin: 0;
+  background: var(--site-bg);
+  color: var(--site-text);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+}

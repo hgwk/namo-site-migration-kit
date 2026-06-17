@@ -1,0 +1,12 @@
+.sb-marquee{display:flex;gap:var(--sb-marquee-gap,1rem);overflow:hidden;padding:8px;--sb-marquee-duration:40s;--sb-marquee-gap:1rem}
+.sb-marquee--horizontal{flex-direction:row}
+.sb-marquee--vertical{flex-direction:column}
+.sb-marquee__track{display:flex;flex-shrink:0;justify-content:space-around;gap:var(--sb-marquee-gap,1rem);min-width:100%;animation:sbMarquee var(--sb-marquee-duration,40s) linear infinite}
+.sb-marquee--vertical .sb-marquee__track{flex-direction:column;min-width:auto;min-height:100%;animation-name:sbMarqueeVertical}
+.sb-marquee--reverse .sb-marquee__track{animation-direction:reverse}
+.sb-marquee--pause:hover .sb-marquee__track{animation-play-state:paused}
+.sb-marquee__item{display:flex;align-items:center;gap:.5rem;white-space:nowrap}
+.sb-marquee__item img{display:block;width:32px;height:32px;object-fit:cover;border-radius:999px}
+@keyframes sbMarquee{from{transform:translateX(0)}to{transform:translateX(calc(-100% - var(--sb-marquee-gap,1rem)))}}
+@keyframes sbMarqueeVertical{from{transform:translateY(0)}to{transform:translateY(calc(-100% - var(--sb-marquee-gap,1rem)))}}
+@media (prefers-reduced-motion:reduce){.sb-marquee__track{animation:none}}

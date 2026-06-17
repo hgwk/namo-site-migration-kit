@@ -1,0 +1,6 @@
+/* i18n FOUC 가드: 팩 적용 전(html.i18n-pending) 동안 i18n 대상 요소를 숨겨 깜빡임 방지.
+   site CSS(전역)에 포함시킬 것. 런타임이 적용 완료 후 i18n-pending 제거. */
+html.i18n-pending [data-i18n],
+html.i18n-pending [data-i18n-html],
+html.i18n-pending [data-i18n-src],
+html.i18n-pending [data-i18n-placeholder]{visibility:hidden}

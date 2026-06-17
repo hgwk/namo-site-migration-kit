@@ -1,0 +1,28 @@
+
+.DS_Store
+dist/
+node_modules/
+ledger/
+*.log
+_archive/
+*.tar.gz
+tmp-*.png
+scripts/_legacy/
+
+# 로컬 브라우저/에이전트 산출물
+.gstack/
+**/.gstack/
+
+# 사이트별 마이그레이션 산출물은 로컬 작업물로 보고 기본 제외한다.
+sites/*
+!sites/_template/
+!sites/_template/**
+
+# 원본 export 덤프와 QA 산출물은 로컬 보관, 버전관리 제외.
+sites/*/_source/
+sites/*/_qa/
+sites/*/_backup/
+sites/*/_reports/
+sites/*/storage-files/
+sites/*/.asset-optimizer-cache.json
+sites/*/.imageoptim-cache.json
